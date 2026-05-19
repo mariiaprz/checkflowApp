@@ -175,4 +175,11 @@ class AuthController extends Controller
             ? response()->json(['success' => true, 'message' => 'Contraseña restablecida correctamente.'])
             : response()->json(['success' => false, 'message' => 'El token es inválido o ha expirado.'], 400);
     }
+
+    // RESET PASSWORD FORM
+    // Muestra el formulario para restablecer la contraseña
+    public function resetPasswordForm($token)
+    {
+        return view('auth.reset-password', ['token' => $token]);
+    }
 }
