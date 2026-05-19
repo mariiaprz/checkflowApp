@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\View\View;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -178,7 +179,7 @@ class AuthController extends Controller
 
     // RESET PASSWORD FORM
     // Muestra el formulario para restablecer la contraseña
-    public function resetPasswordForm($token)
+    public function resetPasswordForm($token) : View
     {
         return view('auth.reset-password', ['token' => $token]);
     }
